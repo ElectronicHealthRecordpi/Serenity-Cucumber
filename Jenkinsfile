@@ -6,9 +6,9 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Tests Login y Productos') {
+        stage('Tests Login') {
             steps {
-                sh 'mvn clean verify -Dmaven.test.failure.ignore=true'
+                sh 'mvn clean verify -Dmaven.test.failure.ignore=true -Dserenity.take.screenshots=AFTER_EACH_STEP'
             }
         }
         stage('Reporte HTML') {
