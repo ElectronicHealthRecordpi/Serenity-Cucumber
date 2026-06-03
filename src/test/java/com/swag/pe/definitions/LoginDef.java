@@ -31,9 +31,7 @@ public class LoginDef {
     /** Opens the login page of the application under test. */
     @Given("the user navigates to the website")
     public void userNavigatesTo() {
-        // The base URL is defined in serenity.properties
-        // (webdriver.base.url = http://host.docker.internal:5173).
-        // We only need to provide the relative path.
+        // webdriver.base.url = http://frontend:5173 ← comentario viejo
         url.navigateTo("/auth/login");
     }
 
