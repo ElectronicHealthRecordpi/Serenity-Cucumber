@@ -16,28 +16,35 @@ public class LoginDef {
     LoginStep login;
     @Steps
     ValidationStep validate;
-    @Given("el usuario navega al sitio web")
-    public void userNavigateTo(){
-    url.navigateTo("https://www.saucedemo.com/v1/index.html");
+
+    @Given("The user navigate to the login page")
+    public void userNavigateTo() {
+        // url to mi website
+        // http://localhost:5173/auth/login
+        url.navigateTo("// http://localhost:5173//auth/login");
     }
-    @When("ingresa credenciales validas")
-    public void userLoginWthValidCredentials(){
-        login.typeUsername("standard_user");
-        login.typePassword("secret_sauce");
+
+    @When("the user (admin) should log in with valid credentials")
+    public void userLoginWthValidCredentials() {
+        login.typeUsername("admin");
+        login.typePassword("Admin1234!");
         login.clickLogin();
     }
-    @Then("la aplicacion deberia mostrar el modulo principal de productos")
-    public void systemShowProductModule(){
+
+    @Then("The application should show the dashboard page ")
+    public void systemShowProductModule() {
         Assert.assertTrue(validate.titleIsVisible());
     }
-    @When("ingresa credenciales invalidas")
+
+    @When("the user (admin) should log in with invalid credentials")
     public void userLoginWthInvalidCredentials() {
-    login.typeUsername("standard_user");
-    login.typePassword("123434");
-    login.clickLogin();
+        login.typeUsername("admin");
+        login.typePassword("InvalidPassword!");
+        login.clickLogin();
     }
-    @Then("la aplicacion deberia mostrar un mensaje de error")
-    public void systemShowErrorMessage(){
+
+    @Then("The application should show an error message")
+    public void systemShowErrorMessage() {
         Assert.assertTrue(validate.errorMessageIsDisplayed());
     }
 
