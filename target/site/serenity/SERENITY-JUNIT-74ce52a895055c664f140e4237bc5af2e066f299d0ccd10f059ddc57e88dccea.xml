@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="2" failures="0" name="CP01 - Validate login" skipped="0" tests="2" time="17.76" timestamp="2026-06-03 04:07:31"><testcase name="1 - Validate with valid credentials"><error message="Timed out after 2 seconds. Element not found&#10;For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Build info: version: '4.29.0', revision: '5fc1ec94cb'&#10;System info: os.name: 'Linux', os.arch: 'amd64', os.version: '7.0.9-105.fc43.x86_64', java.version: '25.0.3'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException">Timed out after 2 seconds. Element not found
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '7.0.9-105.fc43.x86_64', java.version: '25.0.3'
+Driver info: driver.version: unknown</error><system-err>Timed out after 2 seconds. Element not found
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '7.0.9-105.fc43.x86_64', java.version: '25.0.3'
+Driver info: driver.version: unknown
+com.swag.pe.pages.login.LoginPage.typeUsername(LoginPage.java:30)
+com.swag.pe.steps.login.LoginStep.enterUsername(LoginStep.java:16)
+com.swag.pe.definitions.LoginDef.userEntersValidCredentials(LoginDef.java:43)
+</system-err></testcase><testcase name="2 - Validate with invalid credentials"><error message="Timed out after 2 seconds. Element not found&#10;For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Build info: version: '4.29.0', revision: '5fc1ec94cb'&#10;System info: os.name: 'Linux', os.arch: 'amd64', os.version: '7.0.9-105.fc43.x86_64', java.version: '25.0.3'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException">Timed out after 2 seconds. Element not found
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '7.0.9-105.fc43.x86_64', java.version: '25.0.3'
+Driver info: driver.version: unknown</error><system-err>Timed out after 2 seconds. Element not found
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '7.0.9-105.fc43.x86_64', java.version: '25.0.3'
+Driver info: driver.version: unknown
+com.swag.pe.pages.login.LoginPage.typeUsername(LoginPage.java:30)
+com.swag.pe.steps.login.LoginStep.enterUsername(LoginStep.java:16)
+com.swag.pe.definitions.LoginDef.userEntersInvalidCredentials(LoginDef.java:58)
+</system-err></testcase></testsuite>

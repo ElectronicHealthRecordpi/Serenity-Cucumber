@@ -3,14 +3,22 @@ package com.swag.pe.steps.validation;
 import com.swag.pe.pages.validations.ValidationPage;
 import net.serenitybdd.annotations.Step;
 
+/**
+ * Step Library that wraps the assertions executed after a login attempt.
+ * Each method is annotated with @Step so Serenity renders a readable
+ * description in the generated report.
+ */
 public class ValidationStep extends ValidationPage {
-    @Step("Validar visualizacion del modulo de productos")
-    public Boolean titleIsVisible() {
-        return lbl_product.isDisplayed();
-    }
-    @Step("Validar visualizacion del mensaje de error")
-    public Boolean errorMessageIsDisplayed(){
-        return lbl_errorMessage.isDisplayed();
+
+    /** Returns true when the admin dashboard title is visible. */
+    @Step("Validate that the admin dashboard title is visible")
+    public Boolean dashboardTitleIsVisible() {
+        return lblDashboardTitle.isDisplayed();
     }
 
+    /** Returns true when the login error banner is visible. */
+    @Step("Validate that the login error message is displayed")
+    public Boolean errorMessageIsDisplayed() {
+        return lblErrorMessage.isDisplayed();
+    }
 }

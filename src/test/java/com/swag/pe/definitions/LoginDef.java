@@ -9,43 +9,61 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
 import org.junit.Assert;
 
+/**
+ * Glue code that binds the Gherkin steps in 1-login.feature to the
+ * underlying Serenity Step Libraries (LoginStep, ValidationStep) and
+ * navigation utility (WebSite).
+ *
+ * The credentials used here match the "admin" account that is created
+ * in the auth-db (MongoDB) when the stack is started.
+ */
 public class LoginDef {
+
     @Steps
     WebSite url;
+
     @Steps
     LoginStep login;
+
     @Steps
     ValidationStep validate;
 
-    @Given("The user navigate to the login page")
-    public void userNavigateTo() {
-        // url to mi website
-        // http://localhost:5173/auth/login
-        url.navigateTo("// http://localhost:5173//auth/login");
+    /** Opens the login page of the application under test. */
+    @Given("the user navigates to the website")
+    public void userNavigatesTo() {
+        // The base URL is defined in serenity.properties
+        // (webdriver.base.url = http://host.docker.internal:5173).
+        // We only need to provide the relative path.
+        url.navigateTo("/auth/login");
     }
 
-    @When("the user (admin) should log in with valid credentials")
-    public void userLoginWthValidCredentials() {
-        login.typeUsername("admin");
-        login.typePassword("Admin1234!");
+    /** Logs in with the seeded admin credentials. */
+    @When("the user enters valid credentials")
+    public void userEntersValidCredentials() {
+        login.enterUsername("admin");
+        login.enterPassword("Admin1234!");
         login.clickLogin();
     }
 
-    @Then("The application should show the dashboard page ")
-    public void systemShowProductModule() {
-        Assert.assertTrue(validate.titleIsVisible());
+    /** Asserts that the admin dashboard is visible after a successful login. */
+    @Then("the application should show the admin dashboard")
+    public void systemShowsAdminDashboard() {
+        Assert.assertTrue("Admin dashboard title was not visible after login",
+                validate.dashboardTitleIsVisible());
     }
 
-    @When("the user (admin) should log in with invalid credentials")
-    public void userLoginWthInvalidCredentials() {
-        login.typeUsername("admin");
-        login.typePassword("InvalidPassword!");
+    /** Logs in with a valid username but an incorrect password. */
+    @When("the user enters invalid credentials")
+    public void userEntersInvalidCredentials() {
+        login.enterUsername("admin");
+        login.enterPassword("InvalidPassword!");
         login.clickLogin();
     }
 
-    @Then("The application should show an error message")
-    public void systemShowErrorMessage() {
-        Assert.assertTrue(validate.errorMessageIsDisplayed());
+    /** Asserts that the login error banner is displayed after a failed attempt. */
+    @Then("the application should show an error message")
+    public void systemShowsErrorMessage() {
+        Assert.assertTrue("Login error message was not displayed",
+                validate.errorMessageIsDisplayed());
     }
-
 }

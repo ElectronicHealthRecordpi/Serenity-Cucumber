@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: com.swag.pe.Runner
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 18.74 s <<< FAILURE! -- in com.swag.pe.Runner
+CP01 - Validate login.1 - Validate with valid credentials -- Time elapsed: 11.09 s <<< FAILURE!
+java.lang.AssertionError: Admin dashboard title was not visible after login
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.swag.pe.definitions.LoginDef.systemShowsAdminDashboard(LoginDef.java:51)
+	at ✽.the application should show the admin dashboard(file:///home/fabiofernandez/Documents/Projects-7mo/integrador/launcher/Serenity-Cucumber/src/test/resources/features/1-login.feature:9)
+
+CP01 - Validate login.2 - Validate with invalid credentials -- Time elapsed: 6.898 s <<< FAILURE!
+java.lang.AssertionError: Login error message was not displayed
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.swag.pe.definitions.LoginDef.systemShowsErrorMessage(LoginDef.java:66)
+	at ✽.the application should show an error message(file:///home/fabiofernandez/Documents/Projects-7mo/integrador/launcher/Serenity-Cucumber/src/test/resources/features/1-login.feature:14)
+

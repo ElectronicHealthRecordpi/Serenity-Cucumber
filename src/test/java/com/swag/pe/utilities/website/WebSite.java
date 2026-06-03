@@ -4,15 +4,28 @@ import net.serenitybdd.annotations.Step;
 import net.serenitybdd.annotations.Steps;
 import net.thucydides.core.pages.PageObject;
 
+/**
+ * Utility class used to navigate the application under test.
+ * The base URL is configured in serenity.properties (webdriver.base.url)
+ * and the frontend is expected to run locally on the host machine
+ * (reachable from Jenkins as host.docker.internal).
+ */
 public class WebSite {
-    @Steps//ompartr para poder ser utilizada en funciones o metodos atravez de ello
+
+    // Shared PageObject instance injected by Serenity to access the WebDriver.
+    @Steps
     PageObject swag;
 
-    @Step("Navegar al sitio web")
-    public void navigateTo(String url){
-        swag.setDefaultBaseUrl(url);//llamamos la variable de esta clase pom
-        swag.open();
-
+    /**
+     * Opens the given relative path on the configured base URL.
+     * Example: navigateTo("/auth/login") -> opens http://host.docker.internal:5173/auth/login
+     *
+     * @param path relative path that will be appended to the base URL
+     */
+    @Step("Navigate to the website")
+    public void navigateTo(String path) {
+        // open(path) resolves the path against the default base URL
+        // configured in serenity.properties (webdriver.base.url).
+        swag.open(path);
     }
-
 }

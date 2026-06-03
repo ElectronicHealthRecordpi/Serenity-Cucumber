@@ -4,10 +4,21 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * Page Object that maps the elements used to assert the result of a login attempt.
+ *
+ * - On a successful admin login, the application redirects to /admin/home
+ *   which renders an <h1> with the text "Panel de administración".
+ * - On a failed login, the form shows an error message inside a
+ *   <div role="alert"> element.
+ */
 public class ValidationPage extends PageObject {
-    @FindBy(xpath = "//div[@class='product_label']")
-    protected WebElementFacade lbl_product;
-    @FindBy(css="h3[data-test='error']")
-    protected WebElementFacade lbl_errorMessage;
 
+    // H1 title rendered on the admin dashboard after a successful admin login.
+    @FindBy(xpath = "//h1[normalize-space()='Panel de administración']")
+    protected WebElementFacade lblDashboardTitle;
+
+    // Error banner displayed by the login form when credentials are invalid.
+    @FindBy(css = "div[role='alert']")
+    protected WebElementFacade lblErrorMessage;
 }

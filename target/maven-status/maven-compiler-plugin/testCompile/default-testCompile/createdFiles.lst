@@ -1,0 +1,8 @@
+com/swag/pe/utilities/website/WebSite.class
+com/swag/pe/steps/validation/ValidationStep.class
+com/swag/pe/steps/login/LoginStep.class
+com/swag/pe/definitions/LoginDef.class
+com/swag/pe/pages/product/SelectProductsPage.class
+com/swag/pe/pages/validations/ValidationPage.class
+com/swag/pe/pages/login/LoginPage.class
+com/swag/pe/Runner.class

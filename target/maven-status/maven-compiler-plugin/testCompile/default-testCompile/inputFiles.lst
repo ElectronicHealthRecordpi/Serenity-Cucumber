@@ -1,0 +1,8 @@
+/home/fabiofernandez/Documents/Projects-7mo/integrador/launcher/Serenity-Cucumber/src/test/java/com/swag/pe/Runner.java
+/home/fabiofernandez/Documents/Projects-7mo/integrador/launcher/Serenity-Cucumber/src/test/java/com/swag/pe/definitions/LoginDef.java
+/home/fabiofernandez/Documents/Projects-7mo/integrador/launcher/Serenity-Cucumber/src/test/java/com/swag/pe/pages/login/LoginPage.java
+/home/fabiofernandez/Documents/Projects-7mo/integrador/launcher/Serenity-Cucumber/src/test/java/com/swag/pe/pages/product/SelectProductsPage.java
+/home/fabiofernandez/Documents/Projects-7mo/integrador/launcher/Serenity-Cucumber/src/test/java/com/swag/pe/pages/validations/ValidationPage.java
+/home/fabiofernandez/Documents/Projects-7mo/integrador/launcher/Serenity-Cucumber/src/test/java/com/swag/pe/steps/login/LoginStep.java
+/home/fabiofernandez/Documents/Projects-7mo/integrador/launcher/Serenity-Cucumber/src/test/java/com/swag/pe/steps/validation/ValidationStep.java
+/home/fabiofernandez/Documents/Projects-7mo/integrador/launcher/Serenity-Cucumber/src/test/java/com/swag/pe/utilities/website/WebSite.java
