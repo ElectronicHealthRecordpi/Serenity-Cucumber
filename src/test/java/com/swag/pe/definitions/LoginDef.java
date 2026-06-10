@@ -31,7 +31,6 @@ public class LoginDef {
     /** Opens the login page of the application under test. */
     @Given("the user navigates to the website")
     public void userNavigatesTo() {
-        // webdriver.base.url = http://frontend:5173 ← comentario viejo
         url.navigateTo("/auth/login");
     }
 
