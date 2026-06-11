@@ -32,7 +32,7 @@ public class LoginDef {
     @Given("the user navigates to the website")
     public void userNavigatesTo() {
         // http://localhost:5173/auth/login
-        url.navigateTo("http://localhost:5173/auth/login");
+        url.navigateTo("/auth/login");
     }
 
     /** Logs in with the seeded admin credentials. */
