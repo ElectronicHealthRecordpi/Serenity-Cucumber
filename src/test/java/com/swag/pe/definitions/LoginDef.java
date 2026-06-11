@@ -31,7 +31,7 @@ public class LoginDef {
     /** Opens the login page of the application under test. */
     @Given("the user navigates to the website")
     public void userNavigatesTo() {
-        url.navigateTo("/auth/login");
+        url.navigateTo("http://localhost:5173/auth/login");
     }
 
     /** Logs in with the seeded admin credentials. */
