@@ -38,11 +38,12 @@ public class LoginDef {
     /** Logs in with the seeded admin credentials. */
     @When("the user enters valid credentials")
     public void userEntersValidCredentials() {
-        // debug("Using credentials: admin / Admin1234!");
-        System.out.println("Using credentials: admin / Admin1234!");
+        // Verificar que el driver está en la página correcta
+        System.out.println("URL actual: " + driver.getCurrentUrl());
+        System.out.println("Título de la página: " + driver.getTitle());
+
         login.enterUsername("admin");
         login.enterPassword("Admin1234!");
-        System.out.println("Credentials entered and login button clicked");
         login.clickLogin();
     }
 
