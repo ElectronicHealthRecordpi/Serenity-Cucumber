@@ -2,6 +2,7 @@ package com.swag.pe.steps.validation;
 
 import com.swag.pe.pages.validations.ValidationPage;
 import net.serenitybdd.annotations.Step;
+import java.time.Duration;
 
 /**
  * Step Library that wraps the assertions executed after a login attempt.
@@ -15,10 +16,10 @@ public class ValidationStep extends ValidationPage {
             lblDashboardTitle.waitUntilVisible().withTimeoutOf(Duration.ofSeconds(10));
             return lblDashboardTitle.isCurrentlyVisible();
         } catch (Exception e) {
-            System.out.println("Dashboard NOT found. Current URL: "
-                    + getDriver().getCurrentUrl());
-            System.out.println("Page source snippet: "
-                    + getDriver().getPageSource().substring(0, 500));
+            System.out.println("Dashboard NOT found. URL: " + getDriver().getCurrentUrl());
+            System.out.println("H1s en página: ");
+            getDriver().findElements(org.openqa.selenium.By.tagName("h1"))
+                    .forEach(h -> System.out.println("  H1: '" + h.getText() + "'"));
             return false;
         }
     }
@@ -29,8 +30,7 @@ public class ValidationStep extends ValidationPage {
             lblErrorMessage.waitUntilVisible().withTimeoutOf(Duration.ofSeconds(10));
             return lblErrorMessage.isCurrentlyVisible();
         } catch (Exception e) {
-            System.out.println("Error message NOT found. Current URL: "
-                    + getDriver().getCurrentUrl());
+            System.out.println("Error message NOT found. URL: " + getDriver().getCurrentUrl());
             return false;
         }
     }
