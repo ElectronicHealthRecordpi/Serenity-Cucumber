@@ -49,6 +49,8 @@ public class LoginDef {
     /** Asserts that the admin dashboard is visible after a successful login. */
     @Then("the application should show the admin dashboard")
     public void systemShowsAdminDashboard() {
+        System.out.println("Validating that the admin dashboard title is visible");
+        System.out.println("Dashboard title visible: " + validate.dashboardTitleIsVisible());
         Assert.assertTrue("Admin dashboard title was not visible after login",
                 validate.dashboardTitleIsVisible());
     }
