@@ -40,9 +40,9 @@ public class LoginDef {
     public void userEntersValidCredentials() {
         // debug("Using credentials: admin / Admin1234!");
         System.out.println("Using credentials: admin / Admin1234!");
-        System.out.println(txtUsername.getValue());
+        // System.out.println(txtUsername.getValue());
         login.enterUsername("admin");
-        System.out.println(txtUsername.getValue());
+        // System.out.println(txtUsername.getValue());
 
         login.enterPassword("Admin1234!");
         System.out.println("Credentials entered and login button clicked");
