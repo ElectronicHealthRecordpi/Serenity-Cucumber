@@ -9,18 +9,29 @@ import net.serenitybdd.annotations.Step;
  * description in the generated report.
  */
 public class ValidationStep extends ValidationPage {
-
-    /** Returns true when the admin dashboard title is visible. */
     @Step("Validate that the admin dashboard title is visible")
     public Boolean dashboardTitleIsVisible() {
-        lblDashboardTitle.waitUntilVisible();
-        return lblDashboardTitle.isCurrentlyVisible();
+        try {
+            lblDashboardTitle.waitUntilVisible().withTimeoutOf(Duration.ofSeconds(10));
+            return lblDashboardTitle.isCurrentlyVisible();
+        } catch (Exception e) {
+            System.out.println("Dashboard NOT found. Current URL: "
+                    + getDriver().getCurrentUrl());
+            System.out.println("Page source snippet: "
+                    + getDriver().getPageSource().substring(0, 500));
+            return false;
+        }
     }
 
-    /** Returns true when the login error banner is visible. */
     @Step("Validate that the login error message is displayed")
     public Boolean errorMessageIsDisplayed() {
-        lblErrorMessage.waitUntilVisible();
-        return lblErrorMessage.isCurrentlyVisible();
+        try {
+            lblErrorMessage.waitUntilVisible().withTimeoutOf(Duration.ofSeconds(10));
+            return lblErrorMessage.isCurrentlyVisible();
+        } catch (Exception e) {
+            System.out.println("Error message NOT found. Current URL: "
+                    + getDriver().getCurrentUrl());
+            return false;
+        }
     }
 }

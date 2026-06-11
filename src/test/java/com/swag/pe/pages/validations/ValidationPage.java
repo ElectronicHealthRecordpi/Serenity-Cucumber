@@ -21,10 +21,9 @@ public class ValidationPage extends PageObject {
     // @FindBy(xpath = "//h1[contains(text(),'Panel de administracion')]")
     // protected WebElementFacade lblDashboardTitle;
     // @FindBy(xpath = "//h1[normalize-space()='Panel de administracion']")
-    @FindBy(xpath = "//h1[text()='Panel de administracion']")
+    @FindBy(xpath = "//h1[contains(text(),'Panel de administracion')]")
     protected WebElementFacade lblDashboardTitle;
 
-    // Error banner displayed by the login form when credentials are invalid.
     @FindBy(css = "div[role='alert']")
     protected WebElementFacade lblErrorMessage;
 }
