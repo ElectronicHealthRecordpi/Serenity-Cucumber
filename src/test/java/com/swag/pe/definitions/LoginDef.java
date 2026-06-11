@@ -52,8 +52,13 @@ public class LoginDef {
     /** Asserts that the admin dashboard is visible after a successful login. */
     @Then("the application should show the admin dashboard")
     public void systemShowsAdminDashboard() {
-        System.out.println("Validating that the admin dashboard title is visible");
-        System.out.println("Dashboard title visible: " + validate.dashboardTitleIsVisible());
+        // Debug temporal
+        Thread.sleep(3000);
+        System.out.println("URL actual: " + getDriver().getCurrentUrl());
+        // Busca todos los H1 en la página
+        getDriver().findElements(By.tagName("h1"))
+                .forEach(h -> System.out.println("H1 encontrado: '" + h.getText() + "'"));
+
         Assert.assertTrue("Admin dashboard title was not visible after login",
                 validate.dashboardTitleIsVisible());
     }
