@@ -33,13 +33,6 @@
             <artifactId>serenity-junit</artifactId>
             <version>4.2.22</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
-        </dependency> <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -75,9 +68,9 @@
                         <include>**/test/**/*.java</include>
                     </includes>
                     <systemPropertyVariables>
-                        <surefire.security.anager>
-                            java.lan.SecurityManager
-                        </surefire.security.anager>
+                        <surefire.security.manager>
+                            java.lang.SecurityManager
+                        </surefire.security.manager>
                     </systemPropertyVariables>
                 </configuration>
                 <executions>
@@ -96,7 +89,7 @@
                 <version>3.14.0</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
-                    <source>${maven.compiler.target}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
 
             </plugin>
